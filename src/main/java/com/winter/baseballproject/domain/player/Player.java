@@ -24,11 +24,7 @@ public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@ManyToOne
-	@JoinColumn(name = "teamId")
-	private Team team;
-	
+	private int teamId;
 	private int playerNo;
 	private String name;
 	private String position;

@@ -29,7 +29,6 @@ public class TeamService {
 	
 	@Transactional(readOnly = true)
 	public List<Team> teamList() {
-		
 		List<Team> teamList = teamRepository.findAll();
 		
 		return teamList;
@@ -38,6 +37,12 @@ public class TeamService {
 	@Transactional
 	public void Team삭제하기(int id) {
 		int result = teamRepository.Team삭제하기(id);
-
+	}
+	
+	@Transactional
+	public List<Team> TeamId찾기(String teamName) {
+		List<Team> selectTeam = teamRepository.입력된팀찾기(teamName);
+		
+		return selectTeam;
 	}
 }
