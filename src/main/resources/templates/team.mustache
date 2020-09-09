@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+<div class="container">
+  <br/><br/>
+  <h2>Team List</h2>
+  <hr/>
+  <br/>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>No</th>
+        <th>팀 이름</th>
+        <th>삭제하기</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#teamList}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{teamName}}</td>
+        <td><button id="delete_{{id}}" type="submit" class="btn btn-outline-dark mb-2">삭제하기</button></td>
+      </tr>
+     {{/teamList}}
+    </tbody>
+  </table>
+</div>
+
+<script src="/js/team.js"></script>
+</body>
+</html>

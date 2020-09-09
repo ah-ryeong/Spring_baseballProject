@@ -1,0 +1,30 @@
+{{>layout/header}}
+
+<div class="container">
+  <br/><br/>
+  <h2>OutPlayer List</h2>
+  <hr/>
+  <br/>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>no</th>
+        <th>경기장</th>
+        <th>삭제하기</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#stardiumList}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{place}}</td>
+        <td><button id="delete_{{id}}" type="submit" class="btn btn-outline-dark mb-2">삭제하기</button></td>
+      </tr>
+      {{/stardiumList}}
+    </tbody>
+  </table>
+</div>
+
+<script src="/js/stardium.js"></script>
+</body>
+</html>

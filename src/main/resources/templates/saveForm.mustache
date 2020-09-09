@@ -1,0 +1,47 @@
+{{>layout/header}}
+	<div class="container">
+		<br/>
+		<h2>Stardium</h2>
+		<hr/>
+		<form class="form-inline" action="/baseball/stardiumSave" method="post">
+		  <label for="text" class="mr-sm-2">name :</label>
+		  <input type="text" class="form-control mb-2 mr-sm-2" placeholder="야구장을 입력하세요." name="place">
+		  <button id="stardiumSave" type="submit" class="btn btn-outline-dark mb-2">Submit</button>
+		</form>
+		<br/>
+		
+		<br/>
+		<h2>Team</h2>
+		<hr/>
+		<form class="form-inline" action="/baseball/teamSave" method="post">
+		  <label for="text" class="mr-sm-2">name :</label>
+		  <input type="text" class="form-control mb-2 mr-sm-2" placeholder="야구팀을 입력하세요." name="teamName">
+		  <button id="teamSave" type="submit" class="btn btn-outline-dark mb-2" >Submit</button>
+		</form>
+		<br/>
+		
+		<br/>
+		<h2>Player</h2>
+		<hr/>
+		<form class="form-inline" action="/baseball/playerSave" method="post">
+		  <div class="form-group">
+		    <label for="team">teamName:</label>
+		    <input type="text" class="form-control" placeholder="팀이름을 입력하세요." name="teamName">
+		  </div>
+		  <div class="form-group">
+		    <label for="number">PlayerNo:</label>
+		    <input type="number" class="form-control" placeholder="선수번호를 입력하세요." name="playerNo">
+		  </div>
+		  <div class="form-group">
+		    <label for="name">Name:</label>
+		    <input type="text" class="form-control" placeholder="선수 이름을 입력하세요." name="name">
+		  </div>
+		  <div class="form-group">
+		    <label for="position">Position:</label>
+		    <input type="text" class="form-control" placeholder="선수의 포지션을 입력하세요." name="position">
+		  </div>
+		  <button id="playerSave" type="submit" class="btn btn-outline-dark">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
