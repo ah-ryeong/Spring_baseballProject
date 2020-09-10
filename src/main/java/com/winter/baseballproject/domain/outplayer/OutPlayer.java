@@ -27,7 +27,5 @@ public class OutPlayer {
 	
 	private int playerId;
 	private String reason;
-	
-	@CreationTimestamp
-	private Timestamp createDate;
+
 }

@@ -17,6 +17,7 @@ public class PlayerReqDto {
 	private int id;
 	private int playerNo;
 	private int teamId;
+	private int No;
 	private String name;
 	private String position;
 	private String teamName;

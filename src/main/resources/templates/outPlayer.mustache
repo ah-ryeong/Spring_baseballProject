@@ -2,29 +2,54 @@
 
 <div class="container">
   <br/><br/>
-  <h2>OutPlayer List</h2>
+  <h2>Out Player 등록하기</h2>
   <hr/>
   <br/>
   <table class="table">
     <thead class="thead-light">
       <tr>
         <th>no</th>
-        <th>경기장</th>
-        <th>삭제하기</th>
+        <th>TeamName</th>
+        <th>Position</th>
+        <th>Name</th>
+        <th>등록사유</th>
+        <th>등록하기</th>
       </tr>
     </thead>
     <tbody>
-      {{#stardiumList}}
+      {{#playerList}}
       <tr>
-        <td>{{id}}</td>
-        <td>{{place}}</td>
-        <td><button id="delete_{{id}}" type="submit" class="btn btn-outline-dark mb-2">삭제하기</button></td>
+        <td>{{No}}</td>
+        <td>{{teamName}}</td>
+        <td>{{position}}</td>
+        <td>{{name}}</td>
+        <td><input type="text" id="reason_{{id}}"class="reason form-control" placeholder="등록이유를 입력하세요." value=""></td>
+        <td><button id="insert_{{id}}" type="submit" class="btn btn-outline-dark mb-2">등록하기</button></td>
       </tr>
-      {{/stardiumList}}
+      {{/playerList}}
+    </tbody>
+  </table>
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>포지션</th>
+        <th>NC</th>
+        <th>KIA</th>
+        <th>KT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 </div>
 
-<script src="/js/stardium.js"></script>
+<script src="/js/outplayer.js"></script>
 </body>
 </html>

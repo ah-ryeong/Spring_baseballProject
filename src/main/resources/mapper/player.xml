@@ -17,9 +17,11 @@
   	
   	<!-- 모든플레이어찾기 : 모든 플레이어 리스트 뿌리기 -->
   	<select id ="모든플레이어찾기" resultType="com.winter.baseballproject.web.dto.player.PlayerReqDto">
-	  	SELECT t.teamName, p.position, p.name, p.id
+	  	SELECT t.teamName, p.position, p.name, p.id, 
+	  				  ( SELECT COUNT(*) + 1 FROM player WHERE name <![CDATA[<]]> p.name ) AS No
 		FROM player p INNER JOIN team t
-		WHERE p.teamId = t.id
+		WHERE p.teamId = t.id 
+		ORDER By No
   	</select>
   
 </mapper>
