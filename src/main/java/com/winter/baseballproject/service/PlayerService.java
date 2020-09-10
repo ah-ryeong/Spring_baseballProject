@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.winter.baseballproject.domain.player.Player;
+import com.winter.baseballproject.domain.player.PlayerMapper;
 import com.winter.baseballproject.domain.player.PlayerRepository;
 import com.winter.baseballproject.domain.team.Team;
 import com.winter.baseballproject.web.dto.player.PlayerReqDto;
@@ -17,6 +19,7 @@ public class PlayerService {
 
 	private final TeamService teamService;
 	private final PlayerRepository playerRepository;
+	private final PlayerMapper playerMapper;
 
 	@Transactional
 	public void Player저장(PlayerReqDto playerReqDto) {
@@ -31,5 +34,12 @@ public class PlayerService {
 		playerReqDto.setPosition(playerReqDto.getPosition());
 		
 		playerRepository.save(playerReqDto.toPlayerEntity());
+	}
+	
+	@Transactional(readOnly = true)
+	public List<PlayerReqDto> playerList() {
+		List<PlayerReqDto> playerList = playerMapper.findPlayer();
+		
+		return playerList;
 	}
 }
