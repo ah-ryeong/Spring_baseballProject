@@ -5,7 +5,7 @@
   
 <mapper namespace="com.winter.baseballproject.domain.player.PlayerMapper">
   
-  <!-- findPlayer : 플레이어 리스트 뿌리기 -->
+  	<!-- findPlayer : 플레이어 리스트 뿌리기 -->
   	<select id ="findPlayer" resultType="com.winter.baseballproject.web.dto.player.PlayerReqDto">
 	  	SELECT position,
 					  max(if(teamId = '1', name, "")) "NC",
@@ -13,6 +13,13 @@
 					  max(if(teamID = '3', name, "")) "KIA"
 		FROM player
 		GROUP BY position
+  	</select>
+  	
+  	<!-- 모든플레이어찾기 : 모든 플레이어 리스트 뿌리기 -->
+  	<select id ="모든플레이어찾기" resultType="com.winter.baseballproject.web.dto.player.PlayerReqDto">
+	  	SELECT t.teamName, p.position, p.name, p.id
+		FROM player p INNER JOIN team t
+		WHERE p.teamId = t.id
   	</select>
   
 </mapper>

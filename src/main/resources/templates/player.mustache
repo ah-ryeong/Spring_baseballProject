@@ -8,6 +8,29 @@
   <table class="table">
     <thead class="thead-light">
       <tr>
+        <th>no</th>
+        <th>TeamName</th>
+        <th>Position</th>
+        <th>Name</th>
+        <th>삭제하기</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#player}}
+      <tr>
+        <td>1</td>
+        <td>{{teamName}}</td>
+        <td>{{position}}</td>
+        <td>{{name}}</td>
+        <td><button id="delete_{{id}}" type="submit" class="btn btn-outline-dark mb-2">삭제하기</button></td>
+      </tr>
+      {{/player}}
+    </tbody>
+  </table>
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
         <th>포지션</th>
         <th>NC</th>
         <th>KIA</th>
@@ -24,7 +47,9 @@
       </tr>
       {{/playerList}}
     </tbody>
+  </table>
 </div>
 
+<script src="/js/player.js"></script>
 </body>
 </html>

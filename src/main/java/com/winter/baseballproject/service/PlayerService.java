@@ -42,4 +42,16 @@ public class PlayerService {
 		
 		return playerList;
 	}
+	
+	@Transactional(readOnly = true)
+	public List<PlayerReqDto> 모든플레이어찾기() {
+		List<PlayerReqDto> AllPlayer = playerMapper.모든플레이어찾기();
+		
+		return AllPlayer;
+	}
+	
+	@Transactional
+	public void Player삭제하기(int id) {
+		int result = playerRepository.Player삭제하기(id);
+	}
 }
