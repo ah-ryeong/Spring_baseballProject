@@ -24,6 +24,7 @@ public class PlayerReqDto {
 	private String kt;
 	private String kia;
 	private String nc;
+	private String reason;
 	
 	// ﻿toEntity를 호출하면 Player가 만들어져서 리턴됨 -> 안 하면 하나씩 set해줘야해서 불편하다.
 		public Player toPlayerEntity() {

@@ -16,20 +16,20 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class OutPlayerService {
 
-	private OutPlayerRepository outPlayerRepository;
+	private final OutPlayerRepository outPlayerRepository;
 	
 	@Transactional
-	public void 저장(int id, String reason) {
-		System.out.println("OutPlayerService : ID ::: " + id);
+	public void 저장(int playerId, String reason) {
+		System.out.println("OutPlayerService : ID ::: " + playerId);
 		System.out.println("OutPlayerService : ID ::: " + reason);
 		
-		Timestamp Date = new Timestamp(id);
 		
 		OutPlayer outPlayerSave = OutPlayer.builder()
-				.playerId(id)
+				.playerId(playerId)
 				.reason(reason)
 				.build();
 		
+		System.out.println("OutPlayerService : 저장 ::: " + outPlayerSave);
 		outPlayerRepository.save(outPlayerSave);
 	}
 }

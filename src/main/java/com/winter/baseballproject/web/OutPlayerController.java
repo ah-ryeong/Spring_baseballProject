@@ -25,7 +25,8 @@ public class OutPlayerController {
 
 	@GetMapping("/outplayer")
 	public String outPlayer(Model model) {
-		model.addAttribute("playerList", playerService.모든플레이어찾기());
+		model.addAttribute("playerList", playerService.모든플레이어찾기())
+		.addAttribute("OutPlayerList", playerService.OutPlayerList찾기());
 		
 		return "outPlayer";
 	}

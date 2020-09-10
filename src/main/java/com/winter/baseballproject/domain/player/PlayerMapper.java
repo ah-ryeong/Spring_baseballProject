@@ -8,4 +8,5 @@ public interface PlayerMapper {
 
 	List<PlayerReqDto> findPlayer();
 	List<PlayerReqDto> 모든플레이어찾기();
+	List<PlayerReqDto> 모든OUT플레이어찾기();
 }
